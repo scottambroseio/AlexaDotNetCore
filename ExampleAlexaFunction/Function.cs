@@ -16,8 +16,6 @@ namespace ExampleAlexaFunction
         {
             if (!AlexaUtils.RequestIsMentForApplication(request, _applicationId))
             {
-                // unauthorized request, exit
-                // return unauthorized result etc
                 return null;
             }
 
