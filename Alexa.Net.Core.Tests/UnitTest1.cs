@@ -7,7 +7,7 @@ namespace Alexa.Net.Core.Tests
     public class AlexaUtilsTests
     {
         [Fact]
-        public void ShouldCorrectlyValidateRequestMentForApplicationWhenRequestIsValid()
+        public void RequestMentForApplicationShouldReturnTrueWhenRequestIsValid()
         {
             var appId = "APPID";
             var request = new AlexaRequest
@@ -27,7 +27,7 @@ namespace Alexa.Net.Core.Tests
         }
 
         [Fact]
-        public void ShouldCorrectlyValidateRequestMentForApplicationWhenRequestIsInvalid()
+        public void RequestMentForApplicationShouldReturnFalseWhenRequestIsInvalid()
         {
             var appId = "APPID";
             var request = new AlexaRequest
@@ -46,19 +46,100 @@ namespace Alexa.Net.Core.Tests
             Assert.Equal(result, false);
         }
 
-        //[Fact]
-        //public void Test1()
-        //{
-        //}
+        [Fact]
+        public void IsLaunchRequestShouldReturnTrueWhenRequestIsValid()
+        {
+            var request = new AlexaRequest
+            {
+                Request = new Request
+                {
+                    Type = RequestType.LaunchRequest
+                }
+            };
 
-        //[Fact]
-        //public void Test1()
-        //{
-        //}
+            var result = AlexaUtils.IsLaunchRequest(request);
 
-        //[Fact]
-        //public void Test1()
-        //{
-        //}
+            Assert.Equal(result, true);
+        }
+
+        [Fact]
+        public void IsLaunchRequestShouldReturnFalseWhenRequestIsInvalid()
+        {
+            var request = new AlexaRequest
+            {
+                Request = new Request
+                {
+                    Type = RequestType.IntentRequest
+                }
+            };
+
+            var result = AlexaUtils.IsLaunchRequest(request);
+
+            Assert.Equal(result, false);
+        }
+
+        [Fact]
+        public void IsIntentRequestShouldReturnTrueWhenRequestIsValid()
+        {
+            var request = new AlexaRequest
+            {
+                Request = new Request
+                {
+                    Type = RequestType.IntentRequest
+                }
+            };
+
+            var result = AlexaUtils.IsIntentRequest(request);
+
+            Assert.Equal(result, true);
+        }
+
+        [Fact]
+        public void IsIntentRequestShouldReturnFalseWhenRequestIsInvalid()
+        {
+            var request = new AlexaRequest
+            {
+                Request = new Request
+                {
+                    Type = RequestType.LaunchRequest
+                }
+            };
+
+            var result = AlexaUtils.IsIntentRequest(request);
+
+            Assert.Equal(result, false);
+        }
+
+        [Fact]
+        public void IsSessionEndedRequestShouldReturnTrueWhenRequestIsValid()
+        {
+            var request = new AlexaRequest
+            {
+                Request = new Request
+                {
+                    Type = RequestType.SessionEndedRequest
+                }
+            };
+
+            var result = AlexaUtils.IsSessionEndedRequest(request);
+
+            Assert.Equal(result, true);
+        }
+
+        [Fact]
+        public void IsSessionEndedRequestShouldReturnFalseWhenRequestIsInvalid()
+        {
+            var request = new AlexaRequest
+            {
+                Request = new Request
+                {
+                    Type = RequestType.IntentRequest
+                }
+            };
+
+            var result = AlexaUtils.IsSessionEndedRequest(request);
+
+            Assert.Equal(result, false);
+        }
     }
 }
