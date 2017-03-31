@@ -1,0 +1,18 @@
+{
+  "session": {
+    "new": false,
+    "sessionId": "someid",
+    "attributes": {},
+    "user": {
+      "userId": "someid"
+    },
+    "application": {
+      "applicationId": "someid"
+    }
+  },
+  "version": "1.0",
+  "request": {
+    "type": "SessionEndedRequest",
+    "requestId": "someid"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "session": {
+    "sessionId": "someid",
+    "application": {
+      "applicationId": "someid"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "someid"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "someid",
+    "locale": "en-GB",
+    "timestamp": "2016-09-26T18:47:30Z",
+    "intent": {
+      "name": "someintent",
+      "slots": {
+        "someslot": {
+          "name": "someslot",
+          "value": "someslot"
+        },
+        "secondslot": {
+          "name": "secondslot",
+          "value": "secondslot"
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
