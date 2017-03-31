@@ -21,18 +21,43 @@ namespace ExampleAlexaFunction
 
             if (AlexaUtils.IsLaunchRequest(request))
             {
-                Console.WriteLine("Request is a LaunchRequest");
+                return LaunchRequest(request, context);
             }
 
             if (AlexaUtils.IsIntentRequest(request))
             {
-                Console.WriteLine("Request is a IntentRequest");
+                return IntentRequest(request, context);
             }
 
             if (AlexaUtils.IsSessionEndedRequest(request))
             {
-                Console.WriteLine("Request is a SessionEndedRequest");
+                return SessionEndedRequest(request, context);
             }
+
+            //return unhandled etc
+            return null;
+        }
+
+        private AlexaResponse LaunchRequest(AlexaRequest request, ILambdaContext context)
+        {
+            Console.WriteLine("Request is a LaunchRequest");
+
+            return null;
+        }
+
+        private AlexaResponse IntentRequest(AlexaRequest request, ILambdaContext context)
+        {
+            var intent = AlexaUtils.GetIntent(request);
+
+            Console.WriteLine("Request is a IntentRequest");
+            Console.WriteLine(String.Format("Intent is for the {0} intent", intent.Name));
+
+            return null;
+        }
+
+        private AlexaResponse SessionEndedRequest(AlexaRequest request, ILambdaContext context)
+        {
+            Console.WriteLine("Request is a SessionEndedRequest");
 
             return null;
         }

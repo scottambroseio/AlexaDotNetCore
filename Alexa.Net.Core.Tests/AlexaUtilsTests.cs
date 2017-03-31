@@ -141,5 +141,27 @@ namespace Alexa.Net.Core.Tests
 
             Assert.Equal(result, false);
         }
+
+        [Fact]
+        public void GetIntentShouldReturnTheIntent()
+        {
+            var intent = new Intent
+            {
+                Name = "TESTINTENT"
+            };
+
+            var request = new AlexaRequest
+            {
+                Request = new Request
+                {
+                    Type = RequestType.IntentRequest,
+                    Intent = intent
+                }
+            };
+
+            var result = AlexaUtils.GetIntent(request);
+
+            Assert.Equal(result, intent);
+        }
     }
 }

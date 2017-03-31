@@ -21,5 +21,10 @@
         {
             return request.Request.Type == RequestType.SessionEndedRequest;
         }
+
+        public static Intent GetIntent(AlexaRequest request)
+        {
+            return request.Request.Intent;
+        }
     }
 }
