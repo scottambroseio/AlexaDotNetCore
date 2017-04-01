@@ -2,7 +2,7 @@
   "session": {
     "sessionId": "someid",
     "application": {
-      "applicationId": "someid"
+      "applicationId": "1234"
     },
     "attributes": {},
     "user": {

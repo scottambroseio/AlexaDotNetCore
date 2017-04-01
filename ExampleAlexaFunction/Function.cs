@@ -41,26 +41,56 @@ namespace ExampleAlexaFunction
 
         private AlexaResponse LaunchRequest(AlexaRequest request, ILambdaContext context)
         {
-            Console.WriteLine("Request is a LaunchRequest");
+            var response = new AlexaResponse
+            {
+                Response = new Response
+                {
+                    OutputSpeech = new OutputSpeech
+                    {
+                        Type = OutputSpeechType.Text,
+                        Text = "The request was a Launch Request"
+                    }
+                }
+            };
 
-            return null;
+            return response;
         }
 
         private AlexaResponse IntentRequest(AlexaRequest request, ILambdaContext context)
         {
             var intent = AlexaUtils.GetIntent(request);
 
-            Console.WriteLine("Request is a IntentRequest");
-            Console.WriteLine(String.Format("Intent is for the {0} intent", intent.Name));
+            var response = new AlexaResponse
+            {
+                Response = new Response
+                {
+                    OutputSpeech = new OutputSpeech
+                    {
+                        Type = OutputSpeechType.Text,
+                        Text = String.Format("The request was a Intent Request for the {0} intention", intent.Name)
+                    }
+                }
+            };
 
-            return null;
+
+            return response;
         }
 
         private AlexaResponse SessionEndedRequest(AlexaRequest request, ILambdaContext context)
         {
-            Console.WriteLine("Request is a SessionEndedRequest");
+            var response = new AlexaResponse
+            {
+                Response = new Response
+                {
+                    OutputSpeech = new OutputSpeech
+                    {
+                        Type = OutputSpeechType.Text,
+                        Text = "The request was a Session Ended Request"
+                    }
+                }
+            };
 
-            return null;
+            return response;
         }
     }
 }
