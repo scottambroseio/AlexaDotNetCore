@@ -1,4 +1,4 @@
-# AlexaIntegration
+# AlexaDotNetCore
 C# Utilities for building Amazon Alexa Applications
 
 ## Alexa.Net.Core
