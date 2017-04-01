@@ -1,8 +1,7 @@
-using Alexa.Net.Core.Utils;
 using System;
 using Xunit;
 
-namespace Alexa.Net.Core.Tests
+namespace Alexa.Net.Core.Utils.Tests
 {
     public class AlexaUtilsTests
     {

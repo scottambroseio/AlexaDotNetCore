@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Alexa.Net.Core.Models
+namespace Alexa.Net.Core
 {
     public class Slot
     {
